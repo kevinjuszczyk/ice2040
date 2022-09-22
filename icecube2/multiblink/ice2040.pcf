@@ -1,0 +1,43 @@
+set_io IOB_0A  E5
+set_io IOB_2A  D5
+set_io IOB_3B  F5
+set_io IOB_9B  E4
+set_io IOB_10A C3
+set_io IOB_11B F4
+set_io IOB_13B E3
+set_io IOB_24A B1
+set_io IOB_25B F2
+set_io IOB_36B A1
+set_io IOB_37A A2
+set_io IOB_46B B3
+set_io IOB_47A A4
+set_io RGB2 C5
+set_io RGB1 B5
+set_io RGB0 A5
+
+set_io IOB_12A_G4_CDONE D3
+set_io IOB_32A_SPI_SO F1
+set_io IOB_33B_SPI_SI E1
+set_io IOB_34A_SPI_SCK D1
+set_io IOB_35B_SPI_SS C1
+
+set_io P1A1  E3
+set_io P1A2  E4
+set_io P1A3  E5
+set_io P1A4  C5
+set_io P1A7  F2
+set_io P1A8  F4
+set_io P1A9  F5
+set_io P1A10 D5
+
+set_io P1B1       A5
+set_io P1B2       B3
+set_io P1B3       A1
+set_io P1B4       C3
+set_io P1B7       B5
+set_io P1B8       A4
+set_io P1B9       A2
+set_io P1B10      B1
+
+set_io CLK        D3
+set_frequency CLK 12
