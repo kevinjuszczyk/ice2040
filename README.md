@@ -1,2 +1,4 @@
-# ice2040
- ice405KUP 30-ball WLCSP + RP2040
+# ICE2040
+ICE40UP5K FPGA + RP2040 Hacker Board
+
+## Overview
