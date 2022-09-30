@@ -32,3 +32,4 @@ NOTE: If you haven't soldered BGA packages before, this is *not* a good one to s
 6. Copy the [code.py](./circuitpython/code.py) file to the CIRCUITPY drive. This is a python script designed to upload the top_bitmap.bin file into the ICE40.
 7. If you have an LED Pmod plugged into the bottom center Pmod port, you should now see several LEDs blinking at various rates. A multimeter can also be used to check for correct operation. Pins 13B or 25B change slowly enough to show the voltage alternate between 0 and 3.3 volts.
 8. CircuitPython will automatically run the code.py script whenever a file on the CIRCUITPY drive is changed (including top_bitmap.bin). A serial port is also provided for communication with the host PC. See the CircuitPython [documentation](https://learn.adafruit.com/welcome-to-circuitpython) for details.
+![ice2040.gif](./doc/ice2040.gif)
