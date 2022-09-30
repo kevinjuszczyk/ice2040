@@ -1,0 +1,51 @@
+Base Material: FR-4
+
+Layers: 4
+
+Dimension: 63.5 mm* 40.6 mm
+
+Product Type: Industrial/Consumer electronics
+
+Different Design: 1
+
+Delivery Fomat: Single PCB
+
+PCB Thickness: 1.6
+
+Impedance: yes JLC3313
+
+PCB Color: Green
+
+Silkscreen: White
+
+Surface Finish: ENIG
+
+Deburring/Edge rounding: No
+
+Outer Copper Weight: 1
+
+Inner Copper Weight: 0.5
+
+Gold Fingers: No
+
+Flying Probe Test: Fully Test
+
+Castellated Holes: no
+
+Remove Order Number: No
+
+Min hole size/diameter:0.2/0.45mm↑
+
+4-Wire Kelvin Test:No
+
+Material Type:FR4-Standard Tg 130-140C
+
+Paper between PCBs:No
+
+Appearance Quality:IPC Class 2 Standard
+
+Confirm Production file:Yes
+
+Silkscreen Technology:Ink-jet/Screen Printing Silkscreen
+
+Package Box:With JLCPCB logo
