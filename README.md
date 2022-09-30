@@ -14,8 +14,21 @@ A friend expressed an interest in implementing a RISC-V processor using an FPGA,
 The board can be fabricated using [JLCPCB's](https://jlcpcb.com/) 4-layer process, and all components assembled (except for the ICE40 and Pmod headers) using thier Economic PCBA service. [Jlcfab.zip](./kicad/jlcfab.zip) contains the fabrication files including the BOM, footprint position, drill, and gerber files. [Jlcboardsettings.txt](./kicad/jlcboardsettings.txt) shows how to configure the JLCPCB order screen. Note that you want to specify the technical review (Confirm Production Files) for both the board fabrication and assembly. This will let JLCPCB adjust the board traces and parts orientation as needed.
 
 NOTE: If you haven't soldered BGA packages before, this is *not* a good one to start with.
-When the board arrives, check that the RP2040 is functioning correctly by plugging it into the USB port of your PC. A new removable drive should pop up with the volume name of RPI-RP2. 
-To hand-solder the ICE40, cover the pads of the ICE40 footprint with a thin layer of tacky flux. If too much flux is used, it will boil when heated and dislodge the balls from the package. Smear a thin layer of solder paste on a flat metal surface, and then press the ICE40 into it. The idea is to get some paste to stick to the balls so that when heated is applied, the paste will flow down and pool on the pads. 
-Place the ICE40 on the board and line up the package inside the silkscreen while making sure it stays flat on the board. Reflow either with an oven or by using a hotplate underneath and a heat gun above. 
-Check that all pins are connected by using the multimeter diode check function. Connect the positive lead to board ground, and then touch each ICE40 Pmod pad with the negative lead. A good connection will show a voltage drop between 0.5 to 0.7 volts. Test continuity between the power rails and ground to make sure they are not shorted. 
-If you find an open connection, it may be possible to save the part. Dissolve some tacky flux with an equal amount of 99% isopropyl. Drip this mixture around the perimeter of the part so that it wicks underneath. Soak up any excess with a paper towel, and let the flux dry for several hours. Reflow again.
+1. When the board arrives, check that the RP2040 is functioning correctly by plugging it into the USB port of your PC. A new removable drive should pop up with the volume name of RPI-RP2.
+2. Unplug the board.
+3. To hand-solder the ICE40, cover the pads of the ICE40 footprint with a thin layer of tacky flux. If too much flux is used, it will boil when heated and dislodge the balls from the package. 
+4. Smear a thin layer of solder paste on a flat metal surface, and then press the ICE40 into it. The idea is to get some paste to stick to the balls so that when heat is applied, the paste will flow down and pool on the pads. 
+5. Place the ICE40 on the board and line up the package inside the silkscreen while making sure it stays flat on the board. 
+6. Reflow either with an oven or by using a hotplate underneath and a heat gun above. 
+7. Check that all pins are connected by using the multimeter diode check. Connect the positive lead to board ground, and then touch each ICE40 Pmod pad with the negative lead. A good connection will show a voltage drop between 0.5 to 0.7 volts. Test for continuity between the power rails and ground to make sure they are not shorted. 
+8. If you find an open connection, it may be possible to save the part. Dissolve some tacky flux with an equal amount of 99% isopropyl. Drip this mixture around the perimeter of the part so that it wicks underneath. Soak up any excess with a paper towel, and let the flux dry for several hours. Reflow again.
+
+## Software
+1. Hold down the BOOTSEL button on the board while you plug the board into your PC. Once the RPI-RP2 drive pops up, you can release the button.
+2. Download the latest release of [CircuitPython](https://circuitpython.org/board/raspberry_pi_pico/)
+3. Copy the .UF2 file to the RPI-RP2 drive.
+4. The ICE2040 will reboot and a drive labeled CIRCUITPY will pop up.
+5. Copy the [top_bitmap.bin](./ice2040/icecube2/multiblink/multiblink_Implmnt/sbt/outputs/bitmap/top_bitmap.bin) file to the CIRCUITPY drive. This is an ICE40 FPGA bitstream designed to blink several LEDs on the bottom center Pmod port (labeled 25B, 13B, etc.)
+6. Copy the [code.py](./circuitpython/code.py) file to the CIRCUITPY drive. This is a python script designed to upload the top_bitmap.bin file into the ICE40.
+7. If you have an LED Pmod plugged into the bottom ceneter Pmod port, you should now see several LEDs blinking at various rates. A multimeter can also be used to check for correct operation. Pins 13B or 25B change slowly enough to show the voltage alternate between 0 and 3.3 volts.
+8. CircuitPython will automatically run the code.py script whenever a file the CIRCUITPY drive is changed (including top_bitmap.bin). A serial port is also provided for communication with the host PC. See the CircuitPython [documentation](https://learn.adafruit.com/welcome-to-circuitpython) for details.
